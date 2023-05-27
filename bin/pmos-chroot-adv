@@ -1,10 +1,18 @@
 #!/bin/sh
 
+PMOS_DIR=/pmos
+
 for MP in /dev /proc /sys; do
-  mount -o bind ${MP} /pmos${MP}
+  mount -o bind ${MP} "${PMOS_DIR}"${MP}
 done
-chroot /pmos /entrypoint-adv "${@}"
-for MP in /dev /proc /sys; do
-  umount /pmos${MP}
+
+mount /dev/mapper/sda17p1 "${PMOS_DIR}"/boot
+
+chroot "${PMOS_DIR}" "${@}"
+
+umount "${PMOS_DIR}"/boot
+
+for MP in /sys /proc /dev; do
+  umount "${PMOS_DIR}"${MP}
 done
 

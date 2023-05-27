@@ -1,6 +1,0 @@
-#!/bin/sh
-
-mount -o bind /boot /boot
-"${@}"
-umount /boot
-
