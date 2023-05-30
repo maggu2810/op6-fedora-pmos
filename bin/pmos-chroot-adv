@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PMOS_DIR=/pmos
+PMOS_DIR=/sda17p2/pmos
 
 for MP in /dev /proc /sys; do
   mount -o bind ${MP} "${PMOS_DIR}"${MP}
