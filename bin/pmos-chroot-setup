@@ -7,5 +7,4 @@ curl -L \
   https://github.com/maggu2810/op6-containers/releases/download/oneplus-enchilada-pmos-ui-none/oneplus-enchilada-pmos-ui-none.tgz
 tar xzpf /pmos/oneplus-enchilada-pmos-ui-none.tgz -C /pmos
 rm /pmos/oneplus-enchilada-pmos-ui-none.tgz
-install -o 0 -g 0 -m 0755 /usr/share/op6-fedora-pmos/entrypoint-adv /pmos/entrypoint-adv
 
